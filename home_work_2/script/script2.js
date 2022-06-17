@@ -108,3 +108,5 @@ workers.forEach(function ({
 	);
 	rootElem.append(container);
 });
+
+// - новый коментарий....
