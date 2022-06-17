@@ -72,7 +72,6 @@ workers.forEach(function ({
 	rate,
 	days,
 	photo,
-	email,
 }) {
 	const container = document.createElement('div');
 	const idElem = document.createElement('p');
@@ -81,21 +80,20 @@ workers.forEach(function ({
 	const ageElem = document.createElement('p');
 	const salaryElem = document.createElement('p');
 	const photoElem = document.createElement('img');
-	const emailElem = document.createElement('a');
 
 	idElem.innerText = `ID: ${id}`;
 	firstNameElem.innerText = `First name: ${first_name}`;
 	lastNmeElem.innerText = `Last name: ${last_name}`;
 	ageElem.innerText = `Age: ${age}`;
 	salaryElem.innerText = `Salary: ${rate * days}`;
-	emailElem.innerText = email;
 
 	photoElem.setAttribute('src', photo);
 	photoElem.setAttribute('alt', 'photo of worker');
-	emailElem.setAttribute('href', `mailto: ${email}`);
 
 	/// <img src="ссылка" alt="альтернативный текст">
 	///  <a href="mailto:email"></a>
+
+	container.classList.add('container'); //добавляем класс контейнеру
 
 	container.append(
 		idElem,
@@ -103,10 +101,7 @@ workers.forEach(function ({
 		lastNmeElem,
 		ageElem,
 		salaryElem,
-		photoElem,
-		emailElem
+		photoElem
 	);
 	rootElem.append(container);
 });
-
-// - новый коментарий....
