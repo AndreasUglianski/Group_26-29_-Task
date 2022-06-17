@@ -72,6 +72,7 @@ workers.forEach(function ({
 	rate,
 	days,
 	photo,
+	progress,
 }) {
 	const container = document.createElement('div');
 	const idElem = document.createElement('p');
@@ -80,12 +81,16 @@ workers.forEach(function ({
 	const ageElem = document.createElement('p');
 	const salaryElem = document.createElement('p');
 	const photoElem = document.createElement('img');
+	const progressContainer = document.createElement('div');
+	const progressLine = document.createElement('div');
+	const progressValue = document.createElement('p');
 
 	idElem.innerText = `ID: ${id}`;
 	firstNameElem.innerText = `First name: ${first_name}`;
 	lastNmeElem.innerText = `Last name: ${last_name}`;
 	ageElem.innerText = `Age: ${age}`;
 	salaryElem.innerText = `Salary: ${rate * days}`;
+	progressValue.innerText = progress + '%';
 
 	photoElem.setAttribute('src', photo);
 	photoElem.setAttribute('alt', 'photo of worker');
@@ -94,14 +99,20 @@ workers.forEach(function ({
 	///  <a href="mailto:email"></a>
 
 	container.classList.add('container'); //добавляем класс контейнеру
+	progressContainer.classList.add('progress-container');
+	progressLine.classList.add('progress-line');
+	progressLine.style.width = progress + '%';
+	progressValue.classList.add('progress-value');
 
+	progressContainer.append(progressLine, progressValue);
 	container.append(
 		idElem,
 		firstNameElem,
 		lastNmeElem,
 		ageElem,
 		salaryElem,
-		photoElem
+		photoElem,
+		progressContainer
 	);
 	rootElem.append(container);
 });
