@@ -81,9 +81,9 @@ workers.forEach(function ({
 	const ageElem = document.createElement('p');
 	const salaryElem = document.createElement('p');
 	const photoElem = document.createElement('img');
-	const progressContainer = document.createElement('div');
-	const progressLine = document.createElement('div');
-	const progressValue = document.createElement('p');
+	const progressContainer = document.createElement('div'); /// рамка линии прогресса
+	const progressLine = document.createElement('div'); // цветная линия прогресса
+	const progressValue = document.createElement('p'); // цифры
 
 	idElem.innerText = `ID: ${id}`;
 	firstNameElem.innerText = `First name: ${first_name}`;
