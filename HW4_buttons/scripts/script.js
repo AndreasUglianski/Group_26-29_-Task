@@ -25,7 +25,7 @@ function randomColor() {
 	return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
 change_color_btn.addEventListener('click', () => {
-	document.body.style.backgroundColor = randomColor();
+	document.change_color_btn.style.backgroundColor = randomColor();
 });
 // 3.) Создать генератор бросаемых костей (рандомно вычисляется два числа от 1 до 6 и выводятся в интерфейс).
 
